@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  // print statement.
+  print("Hello World!");
+
+  // This is a comment.
+
   runApp(const MyApp());
 }
 
