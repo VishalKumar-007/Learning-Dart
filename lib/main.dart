@@ -1,10 +1,40 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // print statement.
+  // print statement...............................................................................
   print("Hello World!");
 
-  // This is a comment.
+  // This is a comment.............................................................................
+
+  // Variables.....................................................................................
+  // 1st method : datatype var_name = value
+  int firstValue = 5;
+  // 2nd method : var var_name = value
+  var secondValue = 7;
+  // Sum of firstValue & secondValue
+  print("\nSum of $firstValue and $secondValue = ${firstValue + secondValue}");
+
+  // Data Types....................................................................................
+  int value1 = 5;
+  print("\nData type of value1 = $value1 is : ${value1.runtimeType}");
+  double value2 = 5.25;
+  print("Data type of value2 = $value2 is : ${value2.runtimeType}");
+  String value3 = "Sample Text";
+  print("Data type of value3 = $value3 is : ${value3.runtimeType}");
+  bool value4 = true;
+  print("Data type of value4 = $value4 is : ${value4.runtimeType}");
+  // dynamic dataType
+  dynamic value5 = "TextABC";
+  String value6 = "TextABC";
+  // print(value5 + 3); // will give runtime error as datatype of 'value5' is not known during compile time
+  // value5.length is not accessible bcz 'value5' datatype is not known at compile time
+  print("Length of '$value6' text is : ${value6.length}");
+
+  // Multi-line Strings............................................................................
+  String value7 = '''\nThis is multi line string and
+  this is second line
+  this is third line''';
+  print(value7);
 
   runApp(const MyApp());
 }
