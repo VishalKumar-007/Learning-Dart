@@ -36,6 +36,31 @@ void main() {
   this is third line''';
   print(value7);
 
+  // if-else statements............................................................................
+  int age = 20;
+  if (age >= 21) {
+    print("\nAge($age) is greater than 21.");
+  } else if (age >= 18) {
+    print("\nAge($age) is less than 21 and greater than 18.");
+  } else {
+    print("\nAge($age) is less than 18.");
+  }
+
+  // Ternary operator (Condition ? cond_true_case : cond_false_case)
+  int age1 = 16;
+  print(age1 >= 18 ? "\nGreater than 18" : "\nLess than 18");
+
+  // Switch statement
+  int age2 = 18;
+  switch (age2) {
+    case 10:
+      print("\nAge is 10");
+    case 18:
+      print("\nAge is 18");
+    default:
+      print("\nAge is neither 10 nor 18");
+  }
+
   runApp(const MyApp());
 }
 
