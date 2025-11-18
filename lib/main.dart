@@ -46,11 +46,11 @@ void main() {
     print("\nAge($age) is less than 18.");
   }
 
-  // Ternary operator (Condition ? cond_true_case : cond_false_case)
+  // Ternary operator (Condition ? cond_true_case : cond_false_case)...............................
   int age1 = 16;
   print(age1 >= 18 ? "\nGreater than 18" : "\nLess than 18");
 
-  // Switch statement
+  // Switch statement..............................................................................
   int age2 = 18;
   switch (age2) {
     case 10:
@@ -60,6 +60,28 @@ void main() {
     default:
       print("\nAge is neither 10 nor 18");
   }
+
+  // for loop......................................................................................
+  print("");
+  for (int x = 0; x < 5; x++) {
+    print("Hello World ${x + 1}");
+  }
+
+  // while loop....................................................................................
+  print("");
+  int y = 5;
+  while (y < 10) {
+    print("Hello World ${y + 1}");
+    y++;
+  }
+
+  // do-while loop.................................................................................
+  print("");
+  int z = 10;
+  do {
+    print("Hello World ${z + 1}");
+    z++;
+  } while (z < 15);
 
   runApp(const MyApp());
 }
