@@ -81,7 +81,37 @@ void main() {
     z++;
   } while (z < 15);
 
+  print("\nFunctions.................................................");
+  String name = "Mr. X";
+  printName(name);
+
+  print("\nPositional arguments......................................");
+  // parameters must be passed in the same order as in function definition
+  printPositionalArguments("Mr. X", 16, 'Hello!');
+  print("Named arguments...........................................");
+  // parameters can be passed in any order
+  printNamedArguments(age2: 12, greeting2: "Hi!", name2: "Mr. Y");
+
   runApp(const MyApp());
+}
+
+// functions.........................................................
+void printName(String name) {
+  print("My name is $name");
+}
+
+// Positional arguments..............................................
+void printPositionalArguments(String name1, int age1, String greeting1) {
+  print("Name: $name1, Age: $age1, Greeting: $greeting1");
+}
+
+// Named arguments...................................................
+void printNamedArguments({
+  required String name2,
+  required int age2,
+  required String greeting2,
+}) {
+  print("Name: $name2, Age: $age2, Greeting: $greeting2");
 }
 
 class MyApp extends StatelessWidget {
