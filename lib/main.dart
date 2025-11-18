@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // print statement...............................................................................
+  print("print statement...........................................");
   print("Hello World!");
 
-  // This is a comment.............................................................................
+  // This is a comment...............................................
 
-  // Variables.....................................................................................
+  print("\nVariables.................................................");
   // 1st method : datatype var_name = value
   int firstValue = 5;
   // 2nd method : var var_name = value
   var secondValue = 7;
   // Sum of firstValue & secondValue
-  print("\nSum of $firstValue and $secondValue = ${firstValue + secondValue}");
+  print("Sum of $firstValue and $secondValue = ${firstValue + secondValue}");
 
-  // Data Types....................................................................................
+  print("\nData Types................................................");
   int value1 = 5;
-  print("\nData type of value1 = $value1 is : ${value1.runtimeType}");
+  print("Data type of value1 = $value1 is : ${value1.runtimeType}");
   double value2 = 5.25;
   print("Data type of value2 = $value2 is : ${value2.runtimeType}");
   String value3 = "Sample Text";
@@ -30,53 +30,51 @@ void main() {
   // value5.length is not accessible bcz 'value5' datatype is not known at compile time
   print("Length of '$value6' text is : ${value6.length}");
 
-  // Multi-line Strings............................................................................
-  String value7 = '''\nThis is multi line string and
+  print("\nMulti-line Strings........................................");
+  String value7 = '''This is multi line string and
   this is second line
   this is third line''';
   print(value7);
 
-  // if-else statements............................................................................
+  print("\nif-else statements........................................");
   int age = 20;
   if (age >= 21) {
-    print("\nAge($age) is greater than 21.");
+    print("Age($age) is greater than 21.");
   } else if (age >= 18) {
-    print("\nAge($age) is less than 21 and greater than 18.");
+    print("Age($age) is less than 21 and greater than 18.");
   } else {
-    print("\nAge($age) is less than 18.");
+    print("Age($age) is less than 18.");
   }
 
-  // Ternary operator (Condition ? cond_true_case : cond_false_case)...............................
+  print("\nTernary operator..........................................");
+  // (Condition ? cond_true_case : cond_false_case);
   int age1 = 16;
-  print(age1 >= 18 ? "\nGreater than 18" : "\nLess than 18");
+  print(age1 >= 18 ? "Greater than 18" : "Less than 18");
 
-  // Switch statement..............................................................................
+  print("\nSwitch statement..........................................");
   int age2 = 18;
   switch (age2) {
     case 10:
-      print("\nAge is 10");
+      print("Age is 10");
     case 18:
-      print("\nAge is 18");
+      print("Age is 18");
     default:
-      print("\nAge is neither 10 nor 18");
+      print("Age is neither 10 nor 18");
   }
 
-  // for loop......................................................................................
-  print("");
+  print("\nfor loop..................................................");
   for (int x = 0; x < 5; x++) {
     print("Hello World ${x + 1}");
   }
 
-  // while loop....................................................................................
-  print("");
+  print("\nwhile loop................................................");
   int y = 5;
   while (y < 10) {
     print("Hello World ${y + 1}");
     y++;
   }
 
-  // do-while loop.................................................................................
-  print("");
+  print("\ndo-while loop.............................................");
   int z = 10;
   do {
     print("Hello World ${z + 1}");
