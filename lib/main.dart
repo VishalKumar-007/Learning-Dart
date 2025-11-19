@@ -92,6 +92,23 @@ void main() {
   // parameters can be passed in any order
   printNamedArguments(age2: 12, greeting2: "Hi!", name2: "Mr. Y");
 
+  print("\nClasses...................................................");
+  Cookie cookie = Cookie("Rectangle", 25);
+  print("Shape of cookie = ${cookie.shape}");
+  print("Size of cookie = ${cookie.size} cm");
+  cookie.baking();
+
+  print("\nGetters in Class..........................................");
+  print("Value of height in getter =  ${cookie.height}");
+  print("Setters in Class..........................................");
+  cookie.setHeight = 20;
+  print("Updated value of height after setters = ${cookie.height}");
+
+  print("\nStatic Variables and functions............................");
+  // can be used without creating an instance of the class
+  print("Greeting from static variable: ${StaticFunction1.greeting01}");
+  print("SomeValue from static function: ${StaticFunction1.giveMeSomeValue()}");
+
   runApp(const MyApp());
 }
 
@@ -112,6 +129,46 @@ void printNamedArguments({
   required String greeting2,
 }) {
   print("Name: $name2, Age: $age2, Greeting: $greeting2");
+}
+
+// Classes...........................................................
+class Cookie {
+  String shape = "Circle";
+  double size = 15.2;
+
+  // constructor of Cookie class : called as soon as object of this class is created.
+  Cookie(String shape, double size) {
+    print("Cookie class constructor called...");
+    this.shape = shape; // updates value from 'Circle' to 'Rect'
+    this.size = size; // updates value from 15.2 to 25
+    // above 2 lines updates the value to what is given while creating object of this class.
+  }
+
+  int _height = 15; // private variable (accessible only in this file)
+
+  // getters.........................................................
+  int get height => _height; // read-only value
+
+  // setters.........................................................
+  set setHeight(int h) {
+    _height = h;
+  }
+
+  // functions inside a class are called methods.
+  void baking() {
+    print("Baking has started...");
+  }
+}
+
+// static variables and functions....................................
+class StaticFunction1 {
+  // static variable: can be used without creating an object of the class
+  static String greeting01 = "Hello! How are you?";
+
+  // static functions: can be used without creating an object of the class
+  static int giveMeSomeValue() {
+    return 10;
+  }
 }
 
 class MyApp extends StatelessWidget {
