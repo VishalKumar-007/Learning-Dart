@@ -109,6 +109,12 @@ void main() {
   print("Greeting from static variable: ${StaticFunction1.greeting01}");
   print("SomeValue from static function: ${StaticFunction1.giveMeSomeValue()}");
 
+  print("\nInheritance...............................................");
+  Car car = Car();
+  print("isEngineWorking: ${car.isEngineWorking}");
+  // isEngineWorking not defined in Car class still acccesible bcz it inherits Vehicle class where it is defined
+  car.printNoOfWheels();
+
   runApp(const MyApp());
 }
 
@@ -168,6 +174,24 @@ class StaticFunction1 {
   // static functions: can be used without creating an object of the class
   static int giveMeSomeValue() {
     return 10;
+  }
+}
+
+// Inheritance.......................................................
+class Vehicle {
+  int speed = 10;
+  bool isEngineWorking = true;
+
+  void accelerate() {
+    speed += 10;
+  }
+}
+
+class Car extends Vehicle {
+  int noOfWheels = 4;
+
+  void printNoOfWheels() {
+    print("There are $noOfWheels wheels in a car.");
   }
 }
 
