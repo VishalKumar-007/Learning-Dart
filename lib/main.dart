@@ -124,6 +124,16 @@ void main() {
   // override annotation: overrides value of methods and properties of parent class
   sampleClass.implementClassMethod();
 
+  print("\nPolymorphism..............................................");
+  // defined as the ability of an object to take many forms
+  // same sound() function giving different results when pointed to different classes' object
+  Animal myAnimal = Animal();
+  myAnimal.sound(); // Animal is making sound
+  myAnimal = Dog();
+  myAnimal.sound(); // Dog barks
+  myAnimal = Cat();
+  myAnimal.sound(); // Cat meows
+
   runApp(const MyApp());
 }
 
@@ -231,6 +241,28 @@ class SampleClass extends ExtendClass implements ImplementClass {
   @override
   void implementClassMethod() {
     print("Implement class method updated in SampleClass");
+  }
+}
+
+// Polymorphism......................................................
+// defined as the ability of an object to take many forms
+class Animal {
+  void sound() {
+    print("Animal is making sound");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void sound() {
+    print("Dog barks");
+  }
+}
+
+class Cat extends Animal {
+  @override
+  void sound() {
+    print("Cat meows");
   }
 }
 
