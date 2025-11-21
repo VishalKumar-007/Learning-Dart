@@ -134,6 +134,21 @@ void main() {
   myAnimal = Cat();
   myAnimal.sound(); // Cat meows
 
+  print('\nAbstraction...............................................');
+  // It is the process of hiding internal data only exposing required features & functionalities
+  // It is useful for defining blueprints for other classes
+  // Shape shape = Shape(); -> not possible as abstract class can't be instantiated
+  Rectangle rectangle = Rectangle();
+  Triangle triangle = Triangle();
+  // displayInfo implementaion is not known as it is defined in abstract class
+  // but it can be used providing only neccessary info hiding internal data
+  rectangle.drawShape();
+  print("There are ${rectangle.noOfCorners} corners in a rectangle");
+  rectangle.displayInfo();
+  triangle.drawShape();
+  print("There are ${triangle.noOfCorners} corners in a triangle");
+  triangle.displayInfo();
+
   runApp(const MyApp());
 }
 
@@ -263,6 +278,43 @@ class Cat extends Animal {
   @override
   void sound() {
     print("Cat meows");
+  }
+}
+
+// Abstraction.......................................................
+// It is the process of hiding internal data only exposing required features & functionalities
+// It is useful for defining blueprints for other classes
+// abstract properties & method: No implementation in abstract class
+// but must be initialized in inherited classes
+abstract class Shape {
+  int noOfCorners = 0;
+
+  // abstract method: no implementation
+  void drawShape();
+
+  // concrete method: with implementation
+  void displayInfo() {
+    print("This is a shape");
+  }
+}
+
+class Rectangle extends Shape {
+  @override
+  int noOfCorners = 4;
+
+  @override
+  void drawShape() {
+    print("Drawing a rectangle...");
+  }
+}
+
+class Triangle extends Shape {
+  @override
+  int noOfCorners = 3;
+
+  @override
+  void drawShape() {
+    print("Drawing a triangle...");
   }
 }
 
