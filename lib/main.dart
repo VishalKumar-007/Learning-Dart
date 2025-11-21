@@ -115,6 +115,15 @@ void main() {
   // isEngineWorking not defined in Car class still acccesible bcz it inherits Vehicle class where it is defined
   car.printNoOfWheels();
 
+  print("\nImplement keyword.........................................");
+  // forces you to redefine all parent class properties & methods which is implemented
+  SampleClass sampleClass = SampleClass();
+  sampleClass.extendClassMethod();
+  ImplementClass implementClass = ImplementClass();
+  implementClass.implementClassMethod();
+  // override annotation: overrides value of methods and properties of parent class
+  sampleClass.implementClassMethod();
+
   runApp(const MyApp());
 }
 
@@ -192,6 +201,36 @@ class Car extends Vehicle {
 
   void printNoOfWheels() {
     print("There are $noOfWheels wheels in a car.");
+  }
+}
+
+// Implement keyword.................................................
+// forces you to redefine all parent class properties & methods which is implemented
+// but it is not necessary to redefine properties & methods of extended class
+// that's the difference between extends keyword and implements keyword
+class ExtendClass {
+  int extendClassProperty = 1;
+  void extendClassMethod() {
+    print("Extended class method called");
+  }
+}
+
+class ImplementClass {
+  int implementClassProperty = 2;
+  void implementClassMethod() {
+    print("Implement class method called");
+  }
+}
+
+class SampleClass extends ExtendClass implements ImplementClass {
+  // redefining all ImplementClass properties & methods bcz it is implemented
+  // override annotation: overrides value of methods and properties of parent class
+  @override
+  int implementClassProperty = 3;
+
+  @override
+  void implementClassMethod() {
+    print("Implement class method updated in SampleClass");
   }
 }
 
