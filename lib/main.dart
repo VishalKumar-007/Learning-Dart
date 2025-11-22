@@ -149,6 +149,20 @@ void main() {
   print("There are ${triangle.noOfCorners} corners in a triangle");
   triangle.displayInfo();
 
+  print("\nMixin.....................................................");
+  // It doesn't create parent-child relation like inheritance
+  // used to reuse class' methods & properties without using inheritance
+  // indirect way for using multiple inheritance which is not allowed in dart
+  // single class can extend two or more mixin using 'with' keyword
+  Bird bird = Bird("Pigeon");
+  bird.chirp();
+  bird.fly();
+  bird.walk();
+  Human human = Human("Mr. X");
+  human.speak();
+  human.walk();
+  // human.fly(); // can't use fly as Human class doesn't have CanFly mixin
+
   runApp(const MyApp());
 }
 
@@ -315,6 +329,41 @@ class Triangle extends Shape {
   @override
   void drawShape() {
     print("Drawing a triangle...");
+  }
+}
+
+// Mixin.............................................................
+// It doesn't create parent-child relation like inheritance
+// used to reuse class' methods & properties without using inheritance
+// indirect way for using multiple inheritance which is not allowed in dart
+// single class can extend two or more mixin using 'with' keyword
+mixin CanFly {
+  void fly() {
+    print("I can fly");
+  }
+}
+
+mixin CanWalk {
+  void walk() {
+    print("I can walk");
+  }
+}
+
+class Bird with CanFly, CanWalk {
+  String birdName;
+  Bird(this.birdName);
+
+  void chirp() {
+    print("$birdName chirps");
+  }
+}
+
+class Human with CanWalk {
+  String humanName;
+  Human(this.humanName);
+
+  void speak() {
+    print("$humanName speaks");
   }
 }
 
