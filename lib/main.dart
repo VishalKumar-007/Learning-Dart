@@ -236,6 +236,43 @@ void main() {
   print("Difference of setA & setB : $differenceSet");
   // returns a new set containing all elements from 1st set (excluding which are also present in 2nd set)
 
+  print("\nMaps......................................................");
+  // defined as the dynamic collection that stores data in key-value pairs
+  Map<String, int> scores = {"Alice": 95, "Bob": 88, "Charlie": 92};
+  print("Map of scores : $scores");
+  print("All entries of map are : ${scores.entries}");
+  // returns an iterable of all key-vaue pairs in the map
+  print("Score of Alice : ${scores['Alice']}");
+  // returns value of specified key
+  scores['Bob'] = 76;
+  print("Updated map after modifying a value : $scores");
+  scores['Pat'] = 83;
+  print("Updated map after adding a value : $scores");
+  // adds new entry if key is not present otherwise updates the value of specified key
+  scores.addAll({"Jack": 61, "John": 89});
+  print("Updated map after adding multiple values : $scores");
+  // adds or updates multiple values in the map
+  var removedValue = scores.remove('Pat');
+  print("Value removed from map : $removedValue");
+  print("Updated map after removing a value : $scores");
+  // removes & returns removed value
+  scores.clear();
+  print("Updated map after clearing the map : $scores");
+  // removes all entries from the map
+  Map<String, int> inventory = {"Apples": 10, "Bananas": 5};
+  print("Map of inventory : $inventory");
+  print("Does map contains key 'Apple'? : ${inventory.containsKey('Apples')}");
+  print("Does map contains value 5? : ${inventory.containsValue(5)}");
+  // check if map contains the specified key/value
+  print("Is inventory map empty? : ${inventory.isEmpty}");
+  print("Is inventory map not empty? : ${inventory.isNotEmpty}");
+  // check if map is empty/non-empty
+  print("Length of inventory map : ${inventory.length}");
+  // returns the number of key-value pairs
+  print("All keys of inventory map : ${inventory.keys}");
+  print("All values of inventory map : ${inventory.values}");
+  // returns all keys/values present in the map
+
   runApp(const MyApp());
 }
 
