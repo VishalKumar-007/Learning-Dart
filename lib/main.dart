@@ -278,6 +278,22 @@ void main() {
   // it's like a dropdown for a variable value (no chance of invalid values)
   print("What's your job role : ${JobRole.SoftwareEngineer.name}");
 
+  print("\nException Handling........................................");
+  // used to ensure that a program terminated gracefully rather than crashing
+  try {
+    // code that can throw error
+    int result = (10 ~/ 0);
+  } on FormatException {
+    // used to specify any known exception (either built-in or custom exception)
+    print("Error: Format Exception");
+  } catch (e) {
+    // handle any other exceptions
+    print("Exception: $e");
+  } finally {
+    // this block always executes
+    print("finally block executed");
+  }
+
   runApp(const MyApp());
 }
 
