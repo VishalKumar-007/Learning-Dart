@@ -219,6 +219,23 @@ void main() {
   print("Even numbers list using where func : $evenNumbers");
   // filters elements based on a condition & returns new iterable (use toList() to convert)
 
+  print("\nSets......................................................");
+  // defined as collection of unique, unordered items.
+  // can't contain duplicate items
+  Set<int> setA = {1, 2, 3, 4};
+  Set<int> setB = {3, 4, 5, 6};
+  print("Set A : $setA");
+  print("Set B : $setB");
+  Set<int> combinedSet = setA.union(setB);
+  print("Union of setA & setB : $combinedSet");
+  // combines all unique elements from two sets into a new single set
+  Set<int> commonElements = setA.intersection(setB);
+  print("Intersection of setA & setB : $commonElements");
+  // returns a new set containing elements common to both sets
+  Set<int> differenceSet = setA.difference(setB);
+  print("Difference of setA & setB : $differenceSet");
+  // returns a new set containing all elements from 1st set (excluding which are also present in 2nd set)
+
   runApp(const MyApp());
 }
 
