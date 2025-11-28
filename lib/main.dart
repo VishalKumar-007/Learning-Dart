@@ -163,6 +163,62 @@ void main() {
   human.walk();
   // human.fly(); // can't use fly as Human class doesn't have CanFly mixin
 
+  print("\nLists.....................................................");
+  // defined as an ordered collection of objects.
+  List<String> fruits = ["Apple", "Banana", "Orange"];
+  print("List of fruits : $fruits");
+  print("Second value in the list : ${fruits[1]}");
+  // returns the value at specified index
+  print("First value in the list : ${fruits.first}");
+  // returns the first element of the list
+  print("Last value in the list : ${fruits.last}");
+  // returns the last element of the list
+  fruits[1] = "Kiwi";
+  print("Updated list after changing second value : $fruits");
+  // updates the value at specified index
+  fruits.add("Grape");
+  print("Updated list after adding a new value : $fruits");
+  // adds element to the end of the list
+  fruits.addAll(["Mango", "Peach"]);
+  print("Updated list after adding multiple values : $fruits");
+  // adds all given elements to the end of the list
+  fruits.insert(1, "Blueberry");
+  print("Updated list after adding a new value at index 1 : $fruits");
+  // adds given value at specified index in the list
+  fruits.remove("Kiwi");
+  print("Updated list after removing 'Kiwi' from the list : $fruits");
+  // removes the specified value from the list
+  fruits.removeAt(1);
+  print("Updated list after removing second element from the list : $fruits");
+  // removes the value at specified index
+  var lastValue = fruits.removeLast();
+  print("Last value removed from the list : $lastValue");
+  print("Updated list after removing last element from the list : $fruits");
+  // removes and returns the last value
+  fruits.removeWhere((fr) => fr.contains("o"));
+  print("Updated list after removing values having 'o' : $fruits");
+  // removes all values which satisfy the conditon (it is case-sensitive)
+  fruits.clear();
+  print("Updated list after clearing the list : $fruits");
+  // removes all elements from the list
+  List<int> numbers = [3, 1, 4, 1, 5];
+  print("List of numbers : $numbers");
+  numbers.sort();
+  print("Sorted list of numbers : $numbers");
+  // sorts the list in ascending order (elements must be comparable)
+  print("Reversed list of numbers : ${numbers.reversed.toList()}");
+  // returns reversed iterable (can be converted to list using toList())
+  print("Does numbers list contains number 4? : ${numbers.contains(4)}");
+  // check if list contains a specific element
+  print("Sublist from numbers list $numbers : ${numbers.sublist(1, 4)}");
+  // returns a new list containing element from specified range (end index is exclusive)
+  List<int> doubledNumbers = numbers.map((n) => n * 2).toList();
+  print("Doubled numbers list using map() func : $doubledNumbers");
+  // transforms each element & returns a new iterable (use toList() to convert)
+  List<int> evenNumbers = numbers.where((n1) => n1 % 2 == 0).toList();
+  print("Even numbers list using where func : $evenNumbers");
+  // filters elements based on a condition & returns new iterable (use toList() to convert)
+
   runApp(const MyApp());
 }
 
