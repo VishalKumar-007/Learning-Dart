@@ -273,6 +273,11 @@ void main() {
   print("All values of inventory map : ${inventory.values}");
   // returns all keys/values present in the map
 
+  print("\nEnums.....................................................");
+  // used to define a set of values for a variable
+  // it's like a dropdown for a variable value (no chance of invalid values)
+  print("What's your job role : ${JobRole.SoftwareEngineer.name}");
+
   runApp(const MyApp());
 }
 
@@ -476,6 +481,11 @@ class Human with CanWalk {
     print("$humanName speaks");
   }
 }
+
+// Enums.............................................................
+// used to define a set of values for a variable
+// it's like a dropdown for a variable value (no chance of invalid values)
+enum JobRole { SoftwareEngineer, Finance, HR, Manager, CEO, Staff }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
