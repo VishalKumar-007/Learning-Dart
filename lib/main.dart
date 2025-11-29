@@ -294,6 +294,20 @@ void main() async {
     print("finally block executed");
   }
 
+  print("\nRecords...................................................");
+  // allows you to bundle multiple objects (even of different types)
+  // Records are immutable and of fixed size.
+  (String, int) user01 = ("Dash1", 10);
+  // positional field accessed using $ sign
+  var name01 = user01.$1;
+  var age01 = user01.$2;
+  print("User1 --> name: $name01, age: $age01");
+  ({int age02, String name02}) user02 = (name02: "Dash2", age02: 20);
+  // named argument accessed using variable name
+  var name02 = user02.name02;
+  var age02 = user02.age02;
+  print("User2 --> name: $name02, age: $age02");
+
   print("\nFutures...................................................");
   // defined as an object that represents a potential value or error
   // that will be available at some point in future
