@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   print("print statement...........................................");
   print("Hello World!");
 
@@ -294,6 +294,16 @@ void main() {
     print("finally block executed");
   }
 
+  print("\nFutures...................................................");
+  // defined as an object that represents a potential value or error
+  // that will be available at some point in future
+  // Dart's primary tool for managing async operation
+  // IMP : **MAIN FUNCTION MARKED AS ASYNC TO USE AWAIT KEYWORD**
+  print("Start fetching data...");
+  String result = await fetchData();
+  print(result);
+  print("Continuing with other tasks...");
+
   runApp(const MyApp());
 }
 
@@ -502,6 +512,16 @@ class Human with CanWalk {
 // used to define a set of values for a variable
 // it's like a dropdown for a variable value (no chance of invalid values)
 enum JobRole { SoftwareEngineer, Finance, HR, Manager, CEO, Staff }
+
+// Futures...........................................................
+// defined as an object that represents a potential value or error
+// that will be available at some point in future
+// Dart's primary tool for managing async operation
+// // IMP : **FUNCTION MARKED AS ASYNC TO USE AWAIT KEYWORD**
+Future<String> fetchData() async {
+  await Future.delayed(Duration(seconds: 2));
+  return "Data fetched successfully";
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
