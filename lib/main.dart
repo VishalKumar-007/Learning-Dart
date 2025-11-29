@@ -308,6 +308,12 @@ void main() async {
   var age02 = user02.age02;
   print("User2 --> name: $name02, age: $age02");
 
+  print("\nExtensions................................................");
+  // allows developer to add new functionality
+  String motivation = "this is a good world";
+  motivation = motivation.capitalizeFirstLetter();
+  print("Given string in proper case : $motivation");
+
   print("\nFutures...................................................");
   // defined as an object that represents a potential value or error
   // that will be available at some point in future
@@ -551,6 +557,14 @@ Stream<int> countStream(int max) async* {
   for (int i = 1; i <= max; i++) {
     await Future.delayed(Duration(seconds: 1));
     yield i;
+  }
+}
+
+// Extensions........................................................
+// allows developer to add new functionality
+extension CapitalizeFirstLetter on String {
+  String capitalizeFirstLetter() {
+    return this[0].toUpperCase() + substring(1);
   }
 }
 
