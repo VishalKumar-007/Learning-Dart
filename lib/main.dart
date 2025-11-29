@@ -304,6 +304,14 @@ void main() async {
   print(result);
   print("Continuing with other tasks...");
 
+  print("\nStreams...................................................");
+  // defined as a sequence of asynchronous events
+  print("Start counting...");
+  await for (final number in countStream(5)) {
+    print(number);
+  }
+  print("Done counting");
+
   runApp(const MyApp());
 }
 
@@ -521,6 +529,15 @@ enum JobRole { SoftwareEngineer, Finance, HR, Manager, CEO, Staff }
 Future<String> fetchData() async {
   await Future.delayed(Duration(seconds: 2));
   return "Data fetched successfully";
+}
+
+// Streams...........................................................
+// defined as a sequence of asynchronous events
+Stream<int> countStream(int max) async* {
+  for (int i = 1; i <= max; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
 }
 
 class MyApp extends StatelessWidget {
